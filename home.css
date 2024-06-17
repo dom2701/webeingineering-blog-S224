@@ -10,6 +10,8 @@ body {
 
 .logo { 
 	margin-left: 5%; 
+	color: red;
+	font-size: 30px;
 } 
 
 a { 
