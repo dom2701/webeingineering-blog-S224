@@ -1,34 +1,33 @@
 // *** HOME ***
 
 document.addEventListener('DOMContentLoaded', function () { 
-	const createPostBtn = 
-		document.getElementById('createPostBtn'); 
-	const createPostModal = 
-		document.getElementById('createPostModal'); 
-	const closeModal = 
-		document.getElementById('closeModal'); 
-	const postForm = 
-		document.getElementById('postForm'); 
-	const postSubmitBtn = 
-		document.getElementById('postSubmitBtn'); 
-	const postContainer = 
-		document.querySelector('.post-container'); 
-	const postDetailModal = 
-		document.getElementById('postDetailModal'); 
-	const closeDetailModal = 
-		document.getElementById('closeDetailModal'); 
-	const detailTitle = 
-		document.getElementById('detailTitle'); 
-	const detailDate = 
-		document.getElementById('detailDate'); 
-	const detailDescription = 
-		document.getElementById('detailDescription'); 
+    var role = localStorage.getItem("role");
+    if(role == "admin"){
+        const createPostBtn = document.getElementById('createPostBtn'); 
 
-	createPostBtn.addEventListener('click', function () { 
-		createPostModal.style.display = 'flex'; 
-	}); 
+        createPostBtn.addEventListener('click', function () { 
+            const createPostModal = document.getElementById('createPostModal'); 
+            createPostModal.style.display = 'flex'; 
+        }); 
+    }
+    else {
+        alert('You are not allowed to create a post.');
+        return;
+    }
 
-	closeModal.addEventListener('click', function () { 
+    const closeModal = document.getElementById('closeModal'); 
+    const postForm = document.getElementById('postForm'); 
+    const postSubmitBtn = document.getElementById('postSubmitBtn'); 
+    const postContainer = document.querySelector('.post-container'); 
+    const postDetailModal = document.getElementById('postDetailModal'); 
+    const closeDetailModal = document.getElementById('closeDetailModal'); 
+    const detailTitle = document.getElementById('detailTitle'); 
+    const detailDate = document.getElementById('detailDate'); 
+    const detailDescription = document.getElementById('detailDescription'); 
+
+    closeModal.addEventListener('click', function () {
+        // Rest of your code...
+
 		// Add fadeOut class 
 		createPostModal.classList.add('fadeOut'); 
 		setTimeout(() => { 
